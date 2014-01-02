@@ -1,4 +1,4 @@
-﻿Android-PikShare
+﻿PikShare for Android
 ================
 
 PikShare is a picture / video sharing application built on top of Windows Azure.
