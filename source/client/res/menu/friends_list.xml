@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >    
+    <item android:id="@+id/menuSearch" 
+        android:showAsAction="always|collapseActionView" 
+        android:icon="@drawable/action_search"
+        android:actionViewClass="android.widget.SearchView" 
+        android:title="@string/search"></item>
+    <item android:id="@+id/menuAddFriends" 
+        android:showAsAction="always"         
+        android:icon="@drawable/social_add_person" android:title="@string/add_friends"></item>	
+</menu>

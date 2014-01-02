@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     
+     <color name="black">#000</color>
+     <color name="orange">#FF6600</color>
+     <color name="dark_orange">#CC3300</color>
+     <color name="blue">#00F4FF</color>
+     <color name="dark_blue">#00C1CC</color>
+     <color name="white">#FFF</color>
+     <color name="dull_yellow">#DFE200</color>
+     <color name="sign_up_grey">#A0A0A0</color>
+     <color name="dull_purple">#876A96</color>
+     <color name="light_purple">#C59BDB</color>
+</resources>

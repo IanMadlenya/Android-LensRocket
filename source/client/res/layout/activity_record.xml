@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecordActivity" >
+	
+    <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" 
+            android:layout_alignParentTop="true"
+		    android:layout_alignParentBottom="true"
+		    android:layout_alignParentLeft="true"
+		    android:layout_alignParentRight="true"/>
+    
+    
+    
+    <FrameLayout
+    android:id="@+id/camera_preview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    >
+
+    </FrameLayout>
+
+    <ImageView
+            android:id="@+id/pictureView2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" 
+            android:layout_alignParentTop="true"
+		    android:layout_alignParentBottom="true"
+		    android:layout_alignParentLeft="true"
+		    android:layout_alignParentRight="true"
+		    android:scaleType="fitXY"
+		    />
+    
+    <ImageButton
+        android:id="@+id/btnFlash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_alignParentTop="true" 
+        android:layout_alignParentLeft="true"
+        android:onClick="tappedFlash"/>
+    
+    <ImageButton
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/content_remove"
+        android:layout_alignParentTop="true" 
+        android:layout_alignParentLeft="true"
+        android:onClick="tappedDelete"/>
+    
+    
+
+    <ImageButton
+        android:id="@+id/btnSwitchCameras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/device_access_switch_camera" 
+        android:layout_alignParentTop="true" 
+        android:layout_alignParentRight="true"
+        android:onClick="tappedSwitchCamera"/>
+
+    <ImageButton
+        android:id="@+id/btnFriends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/collections_view_as_grid"
+        android:layout_alignParentBottom="true" 
+        android:layout_alignParentRight="true"
+        android:onClick="tappedFriendsList"
+        />
+
+    <ImageButton
+        android:id="@+id/btnPiks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/collections_collection" 
+        android:layout_alignParentBottom="true" 
+        android:layout_alignParentLeft="true"
+        android:onClick="tappedPiks"
+        />
+    <RelativeLayout
+        android:id="@+id/layoutTime"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true" 
+        android:layout_alignParentLeft="true"
+        >
+	    <ImageButton
+	        android:id="@+id/btnTime"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/transparent_circle" 
+	        android:layout_alignParentBottom="true" 
+	        android:layout_alignParentLeft="true"
+	        android:onClick="tappedTime"
+	    	/>
+    	<TextView    
+    	    android:id="@+id/lblTime"    
+	        android:layout_centerInParent="true"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@android:color/white"
+	        android:text="@string/set_in_code"
+        />    
+    </RelativeLayout>
+    
+    <!--  -->
+        
+        <!-- <Button
+            android:background="@drawable/transparent_circle"
+            android:layout_alignParentBottom="true" 
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"/> -->
+    
+    <ImageButton
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/social_send_now" 
+        android:layout_alignParentBottom="true" 
+        android:layout_alignParentRight="true"
+        android:onClick="tappedSend"
+        />
+
+    <ImageButton
+        android:id="@+id/btnTakePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"        
+        android:src="@drawable/device_access_camera" />
+
+</RelativeLayout>

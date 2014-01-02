@@ -1,0 +1,20 @@
+<uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutPiks"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ListView
+        android:id="@+id/lvPiks"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
+
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:text="@string/no_piks"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="center" />
+
+</uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout>

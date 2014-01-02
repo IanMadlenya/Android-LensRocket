@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:title="@string/my_account">
+        <Preference android:title="@string/username" android:key="@string/username"/>
+        <Preference android:title="@string/mobile_number" android:key="@string/mobile_number"/>
+        <EditTextPreference android:title="@string/email_address"
+            				android:dialogTitle="@string/enter_your_email" 
+            				android:positiveButtonText="@string/save"
+            				android:key="@string/email_address"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/privacy">
+        <ListPreference android:title="@string/receive_piks_from" 
+            android:entries="@array/pref_list_privacy" android:entryValues="@array/pref_list_privacy" android:defaultValue="@string/just_friends" android:key="@string/receive_piks_from"/>
+        <ListPreference android:title="@string/share_stories_to" 
+            android:entries="@array/pref_list_privacy" android:entryValues="@array/pref_list_privacy" android:defaultValue="@string/just_friends" android:key="@string/share_stories_to"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/advanced">
+        <Preference android:title="@string/notification_settings" android:key="@string/notification_settings"/>
+        <Preference android:title="@string/video_settings" android:key="@string/video_settings"/>
+        <Preference android:title="@string/join_beta" android:key="@string/join_beta"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/account_actions">
+        <Preference android:title="@string/clear_feed" android:key="@string/clear_feed"/>
+        <Preference android:title="@string/log_out" android:key="@string/log_out"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/more_information">
+        <Preference android:title="@string/support" android:key="@string/support"/>
+        <Preference android:title="@string/privacy_policy" android:key="@string/privacy_policy"/>
+        <Preference android:title="@string/terms_of_use" android:key="@string/terms_of_use"/>
+    </PreferenceCategory>
+    
+
+</PreferenceScreen>
