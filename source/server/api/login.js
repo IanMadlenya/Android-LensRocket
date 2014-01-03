@@ -1,6 +1,5 @@
 var jwthelper = require('../shared/jwthelper.js');
 var aud = "Custom";
-var masterKey = "<YOUR-MOBILE-SERVICE-MASTER-KEY>";
 
 
 exports.post = function(request, response) {    
@@ -24,7 +23,7 @@ exports.post = function(request, response) {
 							var userId = aud + ":" + account.id;
 							response.send(200, {
 								userId: userId,
-								token: jwthelper.zumoJwt(aud, userId, masterKey),
+								token: jwthelper.zumoJwt(aud, userId, request.service.config.masterKey),
                                 status: "SUCCESS",
                                 username: account.username,
                                 email: account.email
