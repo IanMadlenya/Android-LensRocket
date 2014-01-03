@@ -1,6 +1,5 @@
 var jwthelper = require('../shared/jwthelper.js');
 var aud = "Custom";
-var masterKey = "<YOUR-MOBILE-SERVICE-MASTER-KEY>";
 var currentRequest;
 
 
@@ -48,7 +47,7 @@ exports.post = function(request, response) {
 							delete item.salt;
                             delete item.status;                              
 
-                            item.token = jwthelper.zumoJwt(aud, userId, masterKey);
+                            item.token = jwthelper.zumoJwt(aud, userId, request.service.config.masterKey);
                             item.Status = 'User registered';
                             response.send(201, item);
 						}
