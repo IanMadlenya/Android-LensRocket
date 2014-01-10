@@ -1,7 +1,7 @@
 exports.post = function(request, response) {
 
     var postValues = request.body;
-    if (postValues.members !== null)
+    if (postValues.members != null)
       postValues = postValues.members;
     var recipients = JSON.parse(postValues.recipients);
     var azure = require('azure');

@@ -7,7 +7,7 @@ var currentRequest;
 exports.post = function(request, response) {
     currentRequest = request;   
     var postValues = currentRequest.body;
-    if (postValues.members !== null)
+    if (postValues.members != null)
         postValues = postValues.members;  
 
     var accounts = currentRequest.service.tables.getTable('AccountData');	
