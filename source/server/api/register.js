@@ -5,16 +5,20 @@ var currentRequest;
 
 
 exports.post = function(request, response) {
-    currentRequest = request;    
+    currentRequest = request;   
+    var postValues = currentRequest.body;
+    if (postValues.members !== null)
+        postValues = postValues.members;  
+
     var accounts = currentRequest.service.tables.getTable('AccountData');	
-    var item = {
-                 password : currentRequest.body.members.password,
-                 email : currentRequest.body.members.email,
-                 dob : currentRequest.body.members.dob,
+    var item = { 
+                 password : postValues.password,
+                 email : postValues.email,
+                 dob : postValues.dob,
                  username : '',
                  privacyReceive: 'Just Friends',
                  privacyShare: 'Just Friends'
-                };    
+                };   
     if (item.password.length < 7) {
         response.send(200, { Status : 'FAIL', Error: 'Invalid password (at least 7 chars required)'});
         return;

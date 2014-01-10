@@ -3,9 +3,13 @@ var aud = "Custom";
 
 
 exports.post = function(request, response) {    
+	var postValues = request.body;
+	if (postValues.members !== null)
+		postValues = postValues.members;
+
     var accounts = request.service.tables.getTable('AccountData');	
-    var item = { emailOrUserName : request.body.members.emailOrUsername,
-                 password : request.body.members.password
+    var item = { emailOrUserName : postValues.emailOrUsername,
+                 password : postValues.password
                 };
     accounts.where(function(item) {
                 return this.email == item.emailOrUserName || this.username == item.emailOrUserName;

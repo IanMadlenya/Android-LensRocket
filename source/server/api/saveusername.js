@@ -1,10 +1,14 @@
 exports.post = function(request, response) {    
+
+    var postValues = request.body;
+    if (postValues.members !== null)
+        postValues = postValues.members;
     
     var accounts = request.service.tables.getTable('AccountData');
 	var mssql = request.service.mssql;
    
-    var item = { username : request.body.members.username,
-                email : request.body.members.email 
+    var item = { username : postValues.username,
+                email : postValues.email 
                };    
     if (item.username.length < 4) {
         response.send(200, { Status: 'fail', Error: 'Invalid username (at least 4 chars required)'});

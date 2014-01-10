@@ -1,8 +1,12 @@
 exports.post = function(request, response) {
 
+    var postValues = request.body;
+    if (postValues.members !== null) 
+      postValues = postValues.members;
+
     var accounts = request.service.tables.getTable('AccountData');
     var requestUserId = request.user.userId;
-    var item = { username : request.body.members.username };
+    var item = { username : postValues.username };
     accounts.where(function(item) {
             return this.username == item.username;
     },item).read({ 

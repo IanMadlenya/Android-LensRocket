@@ -1,6 +1,9 @@
 exports.post = function(request, response) {
 
-    var recipients = JSON.parse(request.body.members.recipients);    
+    var postValues = request.body;
+    if (postValues.members !== null)
+      postValues = postValues.members;
+    var recipients = JSON.parse(postValues.recipients);
     var azure = require('azure');
     var notificationHubService = azure.createNotificationHubService('<YOUR-NOTIFICATION-HUB-NAME>', '<YOUR-NOTIFICATION-FULL-ACCESS-SIGNATURE>');    
     var messagesTable = request.service.tables.getTable('Messages');
@@ -11,13 +14,13 @@ exports.post = function(request, response) {
                           type:        'Pik',
                           createDate:  new Date(),
                           updateDate:  new Date(),
-                          fromUsername: request.body.members.fromUsername,
+                          fromUsername: postValues.fromUsername,
                           userHasSeen: false,
                           delivered:   true,
-                          isPicture: request.body.members.isPicture,
-                          isVideo: request.body.members.isVideo,
-                          timeToLive: request.body.members.timeToLive,
-                          pikFileId:  request.body.members.pikFileId
+                          isPicture: postValues.isPicture,
+                          isVideo: postValues.isVideo,
+                          timeToLive: postValues.timeToLive,
+                          pikFileId:  postValues.pikFileId
                         };
          messagesTable.insert(newMessage, {
              success: function() {
@@ -36,10 +39,10 @@ exports.post = function(request, response) {
                      //Update original sent pik
                      var sql = "UPDATE Messages SET Delivered = 1, pikFileId = ? WHERE id = ? and fromUserId = ?";
                      var mssql = request.service.mssql;
-                     mssql.queryRaw(sql, [request.body.members.pikFileId, request.body.members.originalSentPikId, request.user.userId], {
+                     mssql.queryRaw(sql, [postValues.pikFileId, postValues.originalSentPikId, request.user.userId], {
                       	success: function(results) {
                              response.send(200, { Status : "Success", 
-                                                  UpdatedId: request.body.members.originalSentPikId,
+                                                  UpdatedId: postValues.originalSentPikId,
                                                   Details: "Piks sent and original updated" 
                                                  });
                          }, error: function(error) {
