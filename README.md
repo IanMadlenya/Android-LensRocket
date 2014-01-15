@@ -22,6 +22,13 @@ After creating your Mobile Service in the Windows Azure Portal, you'll need to c
 
 After creating your Notification Hub, you'll want to set up Google Cloud Messaging by following the first two steps in [this walkthrough](http://www.windowsazure.com/en-us/manage/services/notification-hubs/get-started-notification-hubs-android/).  Note that you'll need your **Project Number** from the Google Console later for the Android client's **Sender ID**.
 
+Return to your Mobile Service and go to the **Configure** tab.  Under the **app settings** area, add the following name-value pairs with the appropriate value from your Storage Account or Notification Hub:
+* STORAGE_ACCOUNT_NAME
+* STORAGE_ACCOUNT_KEY
+* NOTIFICATION_HUB_NAME
+* NOTIFICATION_HUB_FULL_ACCESS_SIGNATURE
+These values will be used by the scripts you upload later in the instructions.
+
 #Client Application Changes
 In order to run the client applicaiton, you'll need to change a few settings in your application.  After importing the project into Eclipse, open **com.msted.pikshare.Constants.java**.  Use the values from your Mobile Service / Notification Hub to set the following properties: **MOBILE_SERVICE_URL**, **MOBILE_SERVICE_APPLICATION_KEY**, **SENDER_ID**, **NOTIFICATION_HUB_CONNECTION_STRING**, and **NOTIFICATION_HUB_NAME**.
 

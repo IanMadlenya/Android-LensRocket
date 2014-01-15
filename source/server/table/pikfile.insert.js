@@ -3,8 +3,8 @@ var qs = require('querystring');
 
 function insert(item, user, request) {
     
-    var accountName = '<YOUR-STORAGE-ACCOUNT-NAME>';
-    var accountKey = '<YOUR-STORAGE-ACCOUNT-KEY>';
+    var accountName = process.env.STORAGE_ACCOUNT_NAME;
+    var accountKey = process.env.STORAGE_ACCOUNT_KEY;
     var host = accountName + '.blob.core.windows.net';
     var blobService = azure.createBlobService(accountName, accountKey, host);
     var containerName = user.userId.replace(":", "").toLowerCase();

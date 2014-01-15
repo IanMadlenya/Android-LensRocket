@@ -68,7 +68,7 @@ function handleInsertFriendResult(requestingUser, response, request, receivingFr
                     response.send(200, { Status : item.username + ' is private.  Friend request sent' });
                     //Push down to user receiving request     
                     var azure = require('azure');
-                    var notificationHubService = azure.createNotificationHubService('<YOUR-NOTIFICATION-HUB-NAME>', '<YOUR-NOTIFICATION-HUB-FULL-ACCESS-SIGNATURE>');
+                    var notificationHubService = azure.createNotificationHubService(process.env.NOTIFICATION_HUB_NAME, process.env.NOTIFICATION_HUB_FULL_ACCESS_SIGNATURE);
                     
                     var payload = '{ "message" : "Friend request received", "collapse_key" : "FRIENDREQUEST" }';
                      notificationHubService.send(newMessage.toUserId, payload, 

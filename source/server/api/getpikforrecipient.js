@@ -28,8 +28,8 @@ exports.post = function(request, response) {
                             } else {
                                 //Get SAS
                                 var pikFile = pikFiles[0];
-                                var accountName = '<YOUR-STORAGE-ACCOUNT-NAME>';
-                                var accountKey = '<YOUR-STORAGE-ACCOUNT-KEY>';
+                                var accountName = process.env.STORAGE_ACCOUNT_NAME;
+                                var accountKey = process.env.STORAGE_ACCOUNT_KEY;
                                 var host = accountName + '.blob.core.windows.net';
                                 var blobService = azure.createBlobService(accountName, accountKey, host);
                                 var containerName = pikFile.creator.replace(":", "").toLowerCase();
