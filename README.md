@@ -27,6 +27,7 @@ Return to your Mobile Service and go to the **Configure** tab.  Under the **app 
 * STORAGE_ACCOUNT_KEY
 * NOTIFICATION_HUB_NAME
 * NOTIFICATION_HUB_FULL_ACCESS_SIGNATURE
+
 These values will be used by the scripts you upload later in the instructions.
 
 #Client Application Changes
@@ -35,7 +36,7 @@ In order to run the client applicaiton, you'll need to change a few settings in 
 Finally, the PikShare Android appliation relies on the [ActionBar Pull To Refresh library](https://github.com/ChrisRisner/ActionBar-PullToRefresh).  The easiest way to put this library in the client application is to clone the ActionBar-PullToRefresh repository and import it's **library** folder into Eclipse.  You can then right click on the project, go to **Properties**, select **Android**, and fix the library path at the bottom of the panel (it should be pointing to the library in an incorrect location).
 
 #Script Changes
-After cloning the Mobile Service script repository locally, you'll want to copy over all files from the **source/server** folder to replace what you cloned locally.  Once that is done, you'll need to enter your Mobile Service **master key**, your Storage Account Name and key, and your Notification Hub Name and Full Access Signature into several of the files including: **getpikforrecipient.js**, **sendpikstofriends.js**, **login.js**, **register.js**, **requestfriend.js**, and **pikfile.insert.js**.  Once you have made those changes, push your repository changes back up to your Mobile Service.
+After cloning the Mobile Service script repository locally, you'll want to copy over all files from the **source/server** folder to replace what you cloned locally.  Once that is done, push your repository changes back up to your Mobile Service.
 
 ## Contact
 
