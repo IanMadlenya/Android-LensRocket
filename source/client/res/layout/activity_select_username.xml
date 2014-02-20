@@ -2,55 +2,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_grey"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/dull_yellow"
     tools:context=".SelectUsernameActivity" >
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_launcher" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView1"
         android:layout_centerHorizontal="true"
-        android:background="@color/white"
         android:orientation="vertical"
         android:paddingBottom="@dimen/medium_margin" >
 
-        <EditText
-            android:id="@+id/txtUsername"
-            android:layout_width="match_parent"
+        <LinearLayout
+        	android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/txtSelectUsernameInstructions"
-            android:ems="10"
-            android:hint="@string/username">
-
-            <requestFocus />
-        </EditText>
+        	android:id="@+id/layoutUsername">
+        
+	        <EditText
+	            android:id="@+id/txtUsername"
+	            android:layout_width="0dp"
+	            android:layout_weight="1"
+	            android:padding="8dp"
+	            android:layout_height="@dimen/text_field_height"
+	            android:background="@drawable/text_field_left_rounded"          
+	            android:ems="10"
+	            android:hint="@string/username"
+	            android:textColor="@color/white" >
+	
+	            <requestFocus />
+	        </EditText>
+	        <ImageView
+			        android:id="@+id/imageView1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="@dimen/text_field_height"
+			        android:layout_marginLeft="-1dp"
+			        android:padding="5dp"
+			        android:background="@drawable/text_field_tab" />
+	    </LinearLayout>
+	        
 
         <Button
             android:id="@+id/btnNext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtUsername"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/layoutUsername"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/medium_margin"
-            android:background="@drawable/second_sign_up_button_style"
+            android:background="@drawable/splash_screen_button_inactive"
             android:paddingLeft="@dimen/splash_button_padding"
             android:paddingRight="@dimen/splash_button_padding"
             android:text="@string/next"
-            android:textColor="@color/white"
+            android:textColor="@color/splash_font"
             android:textSize="@dimen/sign_up_button_text_size"
             android:textStyle="bold" />
 
@@ -58,7 +66,7 @@
             android:id="@+id/progressLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txtUsername"
+            android:layout_below="@+id/layoutUsername"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/medium_margin"
             android:visibility="gone" />
@@ -70,7 +78,8 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:text="@string/select_username_instrutions" />
+            android:text="@string/select_username_instrutions"
+            android:textColor="@color/text_field_header" />
 
     </RelativeLayout>
 

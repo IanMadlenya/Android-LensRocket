@@ -4,7 +4,7 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
+    <style name="AppBaseTheme" parent="android:Theme.Holo">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -29,7 +29,7 @@
 	    <item name="android:background">@color/dull_purple</item>
 	    <item name="android:textColor">@android:color/white</item>
 	    <item name="android:titleTextStyle">@style/TitleTextStyle</item>		   
-	    <item name="android:layout_marginTop">12dp</item>	    
+	    <item name="android:layout_marginTop">@dimen/action_bar_margin_height</item>	    
 	</style>
 	<style name="TitleTextStyle"
            parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
@@ -43,5 +43,15 @@
            parent="android:TextAppearance.Large.Inverse">
         <item name="android:textSize">26sp</item>        
         <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <style name="SettingsTheme" parent="android:Theme.Holo">
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+        <!-- <item name="android:textColor">@color/text_field_header</item>
+        <item name="android:background">@color/dark_grey</item>
+        <item name="android:colorBackground">@color/dark_grey</item>
+        <item name="android:textColorPrimary">@color/text_field_header</item>
+   		<item name="android:textColorSecondary">@color/white</item>
+   		<item name="android:textColorTertiary">@color/text_field_header</item> -->
     </style>
 </resources>

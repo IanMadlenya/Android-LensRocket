@@ -9,8 +9,8 @@
             				android:key="@string/email_address"/>
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/privacy">
-        <ListPreference android:title="@string/receive_piks_from" 
-            android:entries="@array/pref_list_privacy" android:entryValues="@array/pref_list_privacy" android:defaultValue="@string/just_friends" android:key="@string/receive_piks_from"/>
+        <ListPreference android:title="@string/receive_rockets_from" 
+            android:entries="@array/pref_list_privacy" android:entryValues="@array/pref_list_privacy" android:defaultValue="@string/just_friends" android:key="@string/receive_rockets_from"/>
         <ListPreference android:title="@string/share_stories_to" 
             android:entries="@array/pref_list_privacy" android:entryValues="@array/pref_list_privacy" android:defaultValue="@string/just_friends" android:key="@string/share_stories_to"/>
     </PreferenceCategory>

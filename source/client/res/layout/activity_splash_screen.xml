@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/white"
+    android:background="@color/dark_grey"
     tools:context=".SplashScreenActivity" >
 
     <ImageView
@@ -11,36 +11,46 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/launcher_large"
-        android:contentDescription="@null" />
+        android:layout_marginTop="80dp"
+        android:contentDescription="@null"
+        android:paddingLeft="@dimen/splash_logo_padding"
+        android:paddingRight="@dimen/splash_logo_padding"
+        android:src="@drawable/logo_title" />
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        
+        android:contentDescription="@null"
+        
+        android:src="@drawable/background_glow" />
 
     <Button
         android:id="@+id/btnSignUp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="26dp"
+        android:layout_marginRight="26dp"
         android:background="@drawable/sign_up_button_style"
-        android:paddingBottom="@dimen/splash_button_padding"
-        android:paddingTop="@dimen/splash_button_padding"
         android:text="@string/sign_up"
-        android:textColor="@color/white"
-        android:textSize="@dimen/splash_text_size"
-        android:textStyle="bold" />
+        android:textColor="@color/splash_font"
+        android:textSize="@dimen/splash_text_size" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnSignUp"
-        android:layout_alignLeft="@+id/btnSignUp"
-        android:background="@drawable/log_in_button_styles"
-        android:paddingBottom="@dimen/splash_button_padding"
-        android:paddingTop="@dimen/splash_button_padding"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignBottom="@+id/btnSignUp"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="19dp"
+        android:layout_toLeftOf="@+id/btnSignUp"
+        android:background="@drawable/sign_up_button_style"
         android:text="@string/log_in"
-        android:textColor="@color/white"
-        android:textSize="@dimen/splash_text_size"
-        android:textStyle="bold" />
+        android:textColor="@color/splash_font"
+        android:textSize="@dimen/splash_text_size" />
 
 </RelativeLayout>

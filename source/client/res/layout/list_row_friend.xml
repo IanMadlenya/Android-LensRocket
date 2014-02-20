@@ -2,11 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    android:paddingBottom="@dimen/medium_margin"
     android:paddingLeft="@dimen/medium_margin"
-    android:paddingTop="@dimen/medium_margin"
     android:paddingRight="@dimen/medium_margin"
-    android:paddingBottom="@dimen/medium_margin">
+    android:paddingTop="@dimen/medium_margin" >
     
     <TextView
         android:id="@+id/lblUsername"
@@ -15,7 +16,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:text="@string/set_in_code"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/lblInfo"

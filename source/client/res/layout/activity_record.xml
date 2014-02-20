@@ -48,7 +48,7 @@
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/content_remove"
+        android:src="@drawable/cancel_x"
         android:layout_alignParentTop="true" 
         android:layout_alignParentLeft="true"
         android:onClick="tappedDelete"/>
@@ -59,7 +59,7 @@
         android:id="@+id/btnSwitchCameras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/device_access_switch_camera" 
+        android:src="@drawable/flip_camera" 
         android:layout_alignParentTop="true" 
         android:layout_alignParentRight="true"
         android:onClick="tappedSwitchCamera"/>
@@ -68,20 +68,20 @@
         android:id="@+id/btnFriends"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/collections_view_as_grid"
+        android:src="@drawable/items"
         android:layout_alignParentBottom="true" 
         android:layout_alignParentRight="true"
         android:onClick="tappedFriendsList"
         />
 
     <ImageButton
-        android:id="@+id/btnPiks"
+        android:id="@+id/btnRockets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/collections_collection" 
+        android:src="@drawable/folder" 
         android:layout_alignParentBottom="true" 
         android:layout_alignParentLeft="true"
-        android:onClick="tappedPiks"
+        android:onClick="tappedRockets"
         />
     <RelativeLayout
         android:id="@+id/layoutTime"
@@ -123,7 +123,7 @@
         android:id="@+id/btnSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/social_send_now" 
+        android:src="@drawable/right_arrow" 
         android:layout_alignParentBottom="true" 
         android:layout_alignParentRight="true"
         android:onClick="tappedSend"
@@ -135,6 +135,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"        
-        android:src="@drawable/device_access_camera" />
+        android:src="@drawable/camera" />
 
 </RelativeLayout>

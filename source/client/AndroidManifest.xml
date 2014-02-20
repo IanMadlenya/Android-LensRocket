@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.msted.pikshare"
+    package="com.msted.lensrocket"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -13,24 +13,27 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />    
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <uses-feature android:name="android.hardware.camera" />
-    
-    <permission android:name="com.msted.pikshare.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-	<uses-permission android:name="com.msted.pikshare.permission.C2D_MESSAGE"/>
+
+    <permission
+        android:name="com.msted.lensrocket.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.msted.lensrocket.permission.C2D_MESSAGE" />
 
     <application
-        android:name="com.msted.pikshare.PikShareApplication"
+        android:name="com.msted.lensrocket.LensRocketApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.msted.pikshare.activities.SplashScreenActivity"
+            android:name="com.msted.lensrocket.activities.SplashScreenActivity"
             android:label="@string/title_activity_splash_screen"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
@@ -42,32 +45,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.msted.pikshare.activities.LoginActivity"
+            android:name="com.msted.lensrocket.activities.LoginActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.msted.pikshare.activities.SignupActivity"
+            android:name="com.msted.lensrocket.activities.SignupActivity"
             android:label="@string/title_activity_signup"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.msted.pikshare.activities.SelectUsernameActivity"
+            android:name="com.msted.lensrocket.activities.SelectUsernameActivity"
             android:label="@string/title_activity_select_username"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.msted.pikshare.activities.RecordActivity"
+            android:name="com.msted.lensrocket.activities.RecordActivity"
             android:label="@string/title_activity_record"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.msted.pikshare.activities.AccessFriendsActivity"
+            android:name="com.msted.lensrocket.activities.AccessFriendsActivity"
             android:label="@string/title_activity_access_friends"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.msted.pikshare.activities.FriendsListActivity"
+            android:name="com.msted.lensrocket.activities.FriendsListActivity"
             android:label="@string/title_activity_friends_list"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
@@ -77,49 +80,65 @@
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.msted.pikshare.activities.RecordActivity" />
+                android:value="com.msted.lensrocket.activities.RecordActivity" />
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
             <meta-data
                 android:name="android.app.default_searchable"
-                android:value="com.msted.pikshare.FriendsListActivity" />
+                android:value="com.msted.lensrocket.FriendsListActivity" />
         </activity>
         <activity
-            android:name="com.msted.pikshare.activities.PiksListActivity"
-            android:label="@string/title_activity_piks_list"
-            android:parentActivityName="com.msted.pikshare.activities.RecordActivity"
+            android:name="com.msted.lensrocket.activities.RocketsListActivity"
+            android:label="@string/title_activity_rockets_list"
+            android:parentActivityName="com.msted.lensrocket.activities.RecordActivity"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.msted.pikshare.activities.RecordActivity" />
-        </activity>        
+                android:value="com.msted.lensrocket.activities.RecordActivity" />
+        </activity>
         <activity
-            android:name="com.msted.pikshare.activities.SettingsActivity"
+            android:name="com.msted.lensrocket.activities.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="com.msted.pikshare.activities.RecordActivity"
-            android:screenOrientation="portrait" >
+            android:parentActivityName="com.msted.lensrocket.activities.RecordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SettingsTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.msted.pikshare.activities.RecordActivity" />
+                android:value="com.msted.lensrocket.activities.RecordActivity" />
         </activity>
         <activity
-            android:name="com.msted.pikshare.activities.SendToFriendsActivity"
+            android:name="com.msted.lensrocket.activities.SendToFriendsActivity"
             android:label="@string/title_activity_send_to_friends"
-            android:parentActivityName="com.msted.pikshare.activities.RecordActivity"
+            android:parentActivityName="com.msted.lensrocket.activities.RecordActivity"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.msted.pikshare.activities.RecordActivity" />
+                android:value="com.msted.lensrocket.activities.RecordActivity" />
         </activity>
+
         <receiver
-		    android:name=".PikShareBroadcastReceiver"
-		    android:permission="com.google.android.c2dm.permission.SEND" >
-		   <intent-filter>
-		      <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-		      <category android:name="com.msted.pikshare" />
-		   </intent-filter>
-		</receiver>
+            android:name="com.msted.lensrocket.LensRocketBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.msted.lensrocket" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.msted.lensrocket.activities.WebWrapperActivity"
+            android:label="@string/title_activity_web_wrapper" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <data android:scheme="com.msted.lensrocket" />
+
+                
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
