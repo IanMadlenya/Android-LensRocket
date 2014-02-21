@@ -446,7 +446,18 @@ public class RecordActivity extends BaseActivity implements NumberPicker.OnValue
 			mBtnSwitchCamera.setVisibility(View.GONE);
 		else 
 			mCameraNumber = PreferencesHandler.GetCameraPreference(getApplicationContext());
-		mCamera = getCameraInstance(mCameraNumber);		
+		mCamera = getCameraInstance(mCameraNumber);
+		//try setting picture size
+		List<Size> sizes = mCamera.getParameters().getSupportedPictureSizes();
+		for (int i = 0; i < sizes.size(); i++) {
+			Size size = sizes.get(i);
+			if (size.width == 960 && size.height == 720) {
+				Parameters params = mCamera.getParameters();
+				params.setPictureSize(960, 720);
+				mCamera.setParameters(params);
+			}
+		}
+		
 		mCameraPreview = new CameraPreview(this, mCamera);
 		mFrameLayout = (FrameLayout) findViewById(R.id.camera_preview);
 		mFrameLayout.addView(mCameraPreview);
