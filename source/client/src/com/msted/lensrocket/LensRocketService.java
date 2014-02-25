@@ -246,6 +246,10 @@ public class LensRocketService {
 	}
 	
 	public void logout(boolean shouldRedirectToLogin) {
+		//Clear values
+		mFriendNames.clear();
+		mFriends.clear();
+		mRockets.clear();
 		//Clear the cookies so they won't auto login to a provider again
 		CookieSyncManager.createInstance(mContext);
 		CookieManager cookieManager = CookieManager.getInstance();
