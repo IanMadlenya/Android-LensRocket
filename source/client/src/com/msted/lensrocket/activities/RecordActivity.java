@@ -449,14 +449,16 @@ public class RecordActivity extends BaseActivity implements NumberPicker.OnValue
 		else 
 			mCameraNumber = PreferencesHandler.GetCameraPreference(getApplicationContext());
 		mCamera = getCameraInstance(mCameraNumber);
-		//try setting picture size
+		//Set picture size to an appropriate size
 		List<Size> sizes = mCamera.getParameters().getSupportedPictureSizes();
 		for (int i = 0; i < sizes.size(); i++) {
 			Size size = sizes.get(i);
-			if (size.width == 960 && size.height == 720) {
+			int area = size.width * size.height;
+			if (area <= 691200) {
 				Parameters params = mCamera.getParameters();
-				params.setPictureSize(960, 720);
+				params.setPictureSize(size.width, size.height);
 				mCamera.setParameters(params);
+				break;
 			}
 		}
 		
