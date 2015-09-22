@@ -1,3 +1,9 @@
+---
+services:
+platforms:
+author: azure
+---
+
 ﻿LensRocket for Android
 ================
 
